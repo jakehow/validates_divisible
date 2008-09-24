@@ -1,0 +1,18 @@
+ValidatesDivisible
+==================
+
+Simple Active Record extension to validate the divisibility of a column.
+
+
+Example
+=======
+
+class Example < ActiveRecord::Base
+  validates_divisible :amount, :by=>15, :message=>'must be divisible by 15.'
+end
+
+Example.new(:amount => 15).valid? #=> true
+Example.new(:amount => 16).valid? #=> false
+
+
+Copyright (c) 2008 Jake Howerton, released under the MIT license
